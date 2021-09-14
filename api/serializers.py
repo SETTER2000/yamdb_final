@@ -82,9 +82,10 @@ class TitleSerializer(serializers.ModelSerializer):
                     rating=Avg("score")
                 )["rating"]
             )
-        else:
-            rating = None
-        return rating
+            return rating
+        # else:
+        #     rating = None
+        return None
 
     def validate_year(self, value):
         now_year = datetime.datetime.now().year
