@@ -37,7 +37,7 @@ class UserModelViewSet(viewsets.ModelViewSet):
         url_path="me",
     )
     def user_me(self, request) -> Response:
-        """Custom url for checking by user his profile and avialiable edit."""
+        """Пользовательский URL-адрес для редактирования своего профиля."""
         if request.method == "GET":
             serializer = self.get_serializer(request.user)
             return Response(serializer.data)
