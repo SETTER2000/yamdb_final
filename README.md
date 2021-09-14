@@ -1,5 +1,5 @@
 # REST API YaMDb
-
+![example workflow](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### Описание
 
 База отзывов пользователей о фильмах, книгах и музыке. Впрочем ограничений 
