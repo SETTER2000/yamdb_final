@@ -15,6 +15,7 @@ def max_value_current_year(value):
 
 class User(AbstractUser):
     """User model with some custom fields."""
+
     class Roles(models.TextChoices):
         ADMIN = "admin", _("Administrator")
         MODER = "moderator", _("Modererator")
@@ -31,18 +32,15 @@ class User(AbstractUser):
 
     @property
     def is_admin(self):
-        if self.role == "admin" or self.is_superuser:
-            return True
+        return self.role == "admin" or self.is_superuser
 
     @property
     def is_moder(self):
-        if self.role == "moderator" or self.is_staff:
-            return True
+        return self.role == "moderator" or self.is_staff
 
     @property
     def is_user(self):
-        if self.role == "user":
-            return True
+        return self.role == "user"
 
     class Meta:
         ordering = ("username",)
