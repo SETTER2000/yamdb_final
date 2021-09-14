@@ -76,24 +76,21 @@ class TitleSerializer(serializers.ModelSerializer):
         model = Title
 
     def get_rating(self, obj):
-        rating = None
         if Review.objects.filter(title_id=obj.id):
-            rating = int(
-                Review.objects.filter(title_id=obj.id).aggregate(
-                    rating=Avg("score")
-                )["rating"]
-            )
-        # else:
-        #     rating = None
-        return rating
+            rating = Review.objects.filter(title_id=obj.id).aggregate(
+                rating=Avg("score")
+            )["rating"]
+            return int(rating)
+        return None
 
-    def validate_year(self, value):
-        now_year = datetime.datetime.now().year
-        if value < 0 or value > now_year:
-            raise serializers.ValidationError(
-                f"Не верный год [ 0 .. {now_year} ]"
-            )
-        return value
+
+def validate_year(self, value):
+    now_year = datetime.datetime.now().year
+    if value < 0 or value > now_year:
+        raise serializers.ValidationError(
+            f"Не верный год [ 0 .. {now_year} ]"
+        )
+    return value
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
