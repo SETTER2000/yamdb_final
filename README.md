@@ -33,6 +33,7 @@ _Документация по API будет доступна после уст
 
 <a href="https://docs.docker.com/desktop/windows/install/">Windows 10</a>
 
+
 ### Запуск проекта
 
 - Клонировать репозиторий
@@ -115,5 +116,7 @@ sudo systemctl stop apache2
 
 
 ### Авторы
-Александр, Павел и Александр 
+<a href="https://github.com/keplian">keplian</a>,
+<a href="https://github.com/SETTER2000">SETTER2000</a>,
+<a href="https://github.com/KondratevAD">KondratevAD</a>
 
