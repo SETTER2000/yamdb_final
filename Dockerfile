@@ -5,7 +5,6 @@ ENV DIRPATH=/code
 WORKDIR $DIRPATH
 
 COPY requirements.txt $DIRPATH
-COPY .env $DIRPATH
 
 RUN pip install -r $DIRPATH/requirements.txt
 
