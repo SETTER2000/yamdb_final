@@ -5,6 +5,7 @@ ENV DIRPATH=/code
 WORKDIR $DIRPATH
 
 COPY requirements.txt $DIRPATH
+COPY static/redoc.yaml $DIRPATH
 
 RUN pip install -r $DIRPATH/requirements.txt
 
