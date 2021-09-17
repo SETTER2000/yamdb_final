@@ -39,20 +39,57 @@ _Документация по API будет доступна после уст
 
 ### Запуск проекта
 
-- Клонировать репозиторий
-
+- Создать на сервере файл 
 ```
-git clone git@github.com:SETTER2000/infra_sp2.git
+docker-compose.yaml
+```
+- Скопировать в него следующий конфиг
+```
+version: '3.8'
+
+services:
+  db:
+    image: postgres:12.4
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+  web:
+    image: setter2000/yamdb:latest
+    restart: always
+    command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_value:/code/static/
+      - media_value:/code/media/
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  nginx:
+    image: nginx:1.19.3
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - static_value:/var/html/static/
+      - media_value:/var/html/media/
+
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  static_value:
+  media_value:
+
 ```
 
 - Запускаем сервисы 
 
-
 ```
-cd infra_sp2 
-```
-```
-docker-compose up -d --build
+docker-compose up -d 
 ```
 
 - Создаём структуру приложения в DB:
