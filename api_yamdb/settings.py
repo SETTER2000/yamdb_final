@@ -60,7 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
-# DATABASES = {
+DATABASES = {
 #     'default': {
 #         # 'ENGINE': 'django.db.backends.sqlite3',
 #         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 #         'HOST': os.environ.get('DB_HOST'),
 #         'PORT': os.environ.get('DB_PORT'),
 #     }
-# }
+ }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
