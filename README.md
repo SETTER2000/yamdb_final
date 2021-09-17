@@ -1,7 +1,7 @@
 # REST API YaMDb
 ![example workflow](https://github.com/SETTER2000/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
 
-<a href="http://kino2000.ru">Demo</a>
+<a href="http://kino2000.ru/api/v1/">Demo</a>
 
 ### Описание
 
