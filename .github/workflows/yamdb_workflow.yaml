@@ -32,6 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: tests
     steps:
+      - name: Rename .env.template
+        run: |
+          mv .env.template .env
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
