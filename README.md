@@ -1,5 +1,8 @@
 # REST API YaMDb
 ![example workflow](https://github.com/SETTER2000/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+
+<a href="http://kino2000.ru">Demo</a>
+
 ### Описание
 
 База отзывов пользователей о фильмах, книгах и музыке. Впрочем ограничений 
@@ -120,4 +123,5 @@ sudo systemctl stop apache2
 <a href="https://github.com/keplian">keplian</a>,
 <a href="https://github.com/SETTER2000">SETTER2000</a>,
 <a href="https://github.com/KondratevAD">KondratevAD</a>
+
 
