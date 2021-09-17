@@ -39,9 +39,14 @@ _Документация по API будет доступна после уст
 
 ### Запуск проекта
 
-- Создать на сервере файл 
+- Переходим в главную директорию пользователя
+```.env
+cd ~
+``` 
+
+- Создать конфиг-файл  
 ```
-docker-compose.yaml
+sudo nano docker-compose.yaml
 ```
 - Скопировать в него следующий конфиг
 ```
@@ -86,15 +91,15 @@ volumes:
 
 ```
 - Создать директорию 
-```.env
+```
 sudo mkdir nginx 
 ```
 - Создать конфиг для nginx в файле default.conf
-```.env
+```
 sudo nano nginx/default.conf 
 ```
 - Вставить в nginx/default.conf 
-```.env
+```
 server {
     listen 80;
     server_name 127.0.0.1;
