@@ -85,6 +85,32 @@ volumes:
   media_value:
 
 ```
+- Создать директорию 
+```.env
+sudo mkdir nginx 
+```
+- Создать конфиг для nginx в файле default.conf
+```.env
+sudo nano nginx/default.conf 
+```
+- Вставить в nginx/default.conf 
+```.env
+server {
+    listen 80;
+    server_name 127.0.0.1;
+    server_tokens off;
+    location /static/ {
+        root /var/html/;
+    }
+    location /media/ {
+        root /var/html/;
+    }
+    location / {
+        proxy_pass http://web:8000;
+        proxy_set_header Host $host;
+    }
+}
+```
 
 - Запускаем сервисы 
 
