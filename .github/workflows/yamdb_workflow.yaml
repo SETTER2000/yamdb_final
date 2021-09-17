@@ -18,6 +18,7 @@ jobs:
           python -m pip install --upgrade pip
           # установка flake8 и его плагинов
           pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort pytest
+          mv .env.template .env
           # установка зависимостей
           pip install -r requirements.txt
 
